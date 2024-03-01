@@ -5,56 +5,56 @@
     Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
 }
 
-<h3>Danh sách đăng ký</h3>
+<h3>Danh sách đăng ký </h3> 
  
-    @*<table class="table">*@
-<table class="table datatable table-hover">
+@*<table class="table">*@
+<table class="table datatable table-striped  ">
 
-        @if (ViewBag.MsgErr != null)
-        {
+    @if (ViewBag.MsgErr != null)
+    {
         <div class="alert alert-danger alert-dismissible fade show" role="alert">
             @ViewBag.MsgErr
             <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
         </div>
-        }
-     
+    }
 
-        <thead>
-            <tr>
-                <th>
-                    Đơn vị đ.ký
-                </th>
-                <th>
-                    Ngày đ.ký
-                </th>
-                <th>
-                    Ngày thực hiện
-                </th>
-                <th>
-                    Loại xe
-                </th>
-                <th>
-                    Công trình
-                </th>
-                <th>
-                    Nội dung c.việc
-                </th>
-                <th>
-                    Duyệt
-                </th>
 
-                <th>
-                    <strong style="color:red">
-                        <a asp-action="Create">
-                            Đăng ký
-                        </a>
-                    </strong>
-                </th>
-            </tr>
-        </thead>
-        <tbody>
-            @foreach (var item in Model)
-            {
+    <thead>
+        <tr>
+            <th>
+                Đơn vị đ.ký
+            </th>
+            <th>
+                Ngày đ.ký
+            </th>
+            <th>
+                Ngày thực hiện
+            </th>
+            <th>
+                Loại xe
+            </th>
+            <th>
+                Công trình
+            </th>
+            <th>
+                Nội dung c.việc
+            </th>
+            <th>
+                Duyệt
+            </th>
+
+            <th>
+                <strong style="color:red">
+                    <a asp-action="Create">
+                        Đăng ký
+                    </a>
+                </strong>
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
             <tr>
                 <td>
                     <a asp-action="Details" asp-route-id="@item.DieudongId">@item.TenDv</a>
@@ -93,7 +93,7 @@
                 @if (User.Identity.Name == "vanphong")
                 {
                     <td>
-                        <a asp-action="duyet" asp-route-id="@item.DieudongId">Xử lý</a> |                        
+                        <a asp-action="duyet" asp-route-id="@item.DieudongId">Xử lý</a> |
                     </td>
                 }
                 @if (User.Identity.Name != "vanphong")
@@ -104,6 +104,6 @@
                     </td>
                 }
             </tr>
-            }
-        </tbody>
-    </table>
+        }
+    </tbody>
+</table>

@@ -1,0 +1,160 @@
+﻿@model IEnumerable<WebApp.Areas.Admin.Data.TDieudong>
+
+@{
+    ViewData["Title"] = "GetAll";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    int No = 0;
+}
+
+<div>
+    <div class="mb-3">
+        <a href="@Url.Action("GetAll","Dieudong")" class="btn btn-sm btn-outline-danger">
+            Gte All 
+        </a>
+
+        @foreach (var item in Model)
+        {
+            <a href="@Url.Action("GetAll","Dieudong", new { _Trangthaiduyet = "Không duyệt"  })" class="btn btn-sm btn-outline-primary">
+                @item.Trangthaiduyet 
+            </a>
+            ////https://localhost:5001/Dieudong?_NgayTh_Tu=2024-01-01&_NgayTh_Den=2026-01-01&_Trangthaiduyet=Kh%C3%B4ng+duy%E1%BB%87t
+        }
+    </div>
+    <form asp-controller="Dieudong" asp-action="Index" method="get">
+        <div class="row mb-3">
+
+            <label for="inputDate" class="col-auto col-form-label" style="color:darkblue; font-weight:bold">Lịch điều động từ </label>
+            <div class="col-auto">
+                <input type="date" class="form-control" name="_NgayTh_Tu" required>
+            </div>
+
+            <label class="col-auto col-form-label" style="color:darkblue; font-weight:bold">đến</label>
+            <div class="col-auto">
+                <input type="date" class="form-control" name="_NgayTh_Den" required>
+            </div>
+
+
+            <div class="col-auto">
+                
+
+                <select class="form-select" name="_Trangthaiduyet">
+                    <option>
+                        <a href="@Url.Action("GetAll","Dieudong", new { _Trangthaiduyet="Đã duyệt" })" class="btn btn-sm btn-outline-primary">
+                        </a>
+                    </option>
+                        <option value="-1" selected> Trạng thái</option>
+                    <option value="Không duyệt">Không duyệt</option>
+                    <option value="Chờ duyệt">Chờ duyệt</option>
+                    <option value="Đã duyệt">Đã duyệt</option>
+
+                </select>
+                
+                <select class="form-select" name="_Trangthaiduyet">
+                    <option value="-1" selected> Trạng thái</option>
+                    <option value="Không duyệt">Không duyệt</option>
+                    <option value="Chờ duyệt">Chờ duyệt</option>
+                    <option value="Đã duyệt">Đã duyệt</option>
+
+
+                </select>
+            </div>
+            <div class="col-auto">
+                <a href="@Url.Action("GetAll","Dieudong", new { _Trangthaiduyet=  ViewBag.Trangthaiduyet }) class="btn btn-sm btn-outline-primary">
+                    daxxxxxxxxxxxxxx
+                </a>
+            </div>
+            <div class="col-auto">
+                <a href="@Url.Action("GetAll","Dieudong", new { _Trangthaiduyet="Đã duyệt" })" class="btn btn-sm btn-outline-primary">
+                    Đã
+                </a>
+            </div>
+            <div class="col-sm-2">
+                <button type="submit" class="btn btn-outline-primary">Tìm kiếm</button>
+            </div>
+        </div>
+</form>
+
+
+
+
+    <table class="table table-bordered table-hover table-striped">
+        <thead>
+            <tr class="text-center">
+                <th>
+                    TT
+                </th>
+                <th>
+                    Đơn vị
+                </th>
+                <th>
+                    Ngày đ.ký
+                </th>
+                <th>
+                    Ngày t/hiện
+                </th>
+                <th class="text-center">
+                    Loại xe
+                </th>
+                <th>
+                    Công trình
+                </th>
+                <th>
+                    Công việc
+                </th>
+                <th>
+                    Trạng thái
+                </th>
+
+            </tr>
+        </thead>
+
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td class="text-center">
+                        @*@(++No)*@
+
+                        @(++ViewBag.Index)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.TenDv)
+                    </td>
+                    <td>
+                        @item.NgayDk.ToShortDateString()
+                    </td>
+                    <td>
+                        @item.NgayTh.ToShortDateString()
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Tenloaixe)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Tenloaicongtrinh)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Noidung)
+                    </td>
+                    <td class="text-center">
+                        @if (item.Trangthaiduyet == "Đã duyệt")
+                        {
+                            <span class="badge rounded-pill bg-success">@item.Trangthaiduyet</span>
+                        }
+                        @if (item.Trangthaiduyet == "Chờ duyệt")
+                        {
+                            <span class="badge rounded-pill bg-warning text-black">@item.Trangthaiduyet</span>
+                        }
+                        @if (item.Trangthaiduyet == "Không duyệt")
+                        {
+                            <span class="badge rounded-pill bg-danger text-white">@item.Trangthaiduyet</span>
+                        }
+                        <br />
+                        <a asp-action="Details" asp-route-id="@item.DieudongId"> <span style="color:blue">chi tiết </span></a>
+                    </td>
+
+                </tr>
+            }
+        </tbody>
+    </table>
+    <partial name="_Partial_Pager" model="@ViewBag.Pager" />
+</div>

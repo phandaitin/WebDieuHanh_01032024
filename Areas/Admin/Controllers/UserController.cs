@@ -57,6 +57,9 @@ namespace WebApp.Areas.Admin.Controllers
         {
             ViewData["MaDv"] = new SelectList(_context.TDonvis, "MaDv", "TenDv");
             //ViewData["MaDv"] = new SelectList(_context.TDonvis, "MaDv", "MaDv");
+
+            await HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
+
             //===================================================
             if (tUser.MaDv  == "-1")
             {

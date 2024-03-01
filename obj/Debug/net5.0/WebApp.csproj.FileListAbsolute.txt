@@ -998,3 +998,14 @@ D:\ASP_NET_CORE\webdieuhanh\WebDieuHanh\obj\Debug\net5.0\Razor\Areas\Admin\Views
 D:\ASP_NET_CORE\webdieuhanh\WebDieuHanh\obj\Debug\net5.0\Razor\Areas\Admin\Views\Dieudong\Edit.cshtml.g.cs
 D:\ASP_NET_CORE\webdieuhanh\WebDieuHanh\obj\Debug\net5.0\Razor\Areas\Admin\Views\Dieudong\Index.cshtml.g.cs
 D:\ASP_NET_CORE\webdieuhanh\WebDieuHanh\obj\Debug\net5.0\Razor\Areas\Admin\Views\Dieudong\duyet.cshtml.g.cs
+D:\ASP_NET_CORE\webdieuhanh\WebDieuHanh\obj\Debug\net5.0\Razor\Views\Dieudong\Create.cshtml.g.cs
+D:\ASP_NET_CORE\webdieuhanh\WebDieuHanh\obj\Debug\net5.0\Razor\Views\Dieudong\Delete.cshtml.g.cs
+D:\ASP_NET_CORE\webdieuhanh\WebDieuHanh\obj\Debug\net5.0\Razor\Views\Dieudong\Details.cshtml.g.cs
+D:\ASP_NET_CORE\webdieuhanh\WebDieuHanh\obj\Debug\net5.0\Razor\Views\Dieudong\Edit.cshtml.g.cs
+D:\ASP_NET_CORE\webdieuhanh\WebDieuHanh\obj\Debug\net5.0\Razor\Views\Dieudong\Index.cshtml.g.cs
+D:\ASP_NET_CORE\webdieuhanh\WebDieuHanh\obj\Debug\net5.0\Razor\Views\Shared\_Partial_Footer.cshtml.g.cs
+D:\ASP_NET_CORE\webdieuhanh\WebDieuHanh\obj\Debug\net5.0\Razor\Views\Shared\_Partial_Header.cshtml.g.cs
+D:\ASP_NET_CORE\webdieuhanh\WebDieuHanh\obj\Debug\net5.0\Razor\Views\Home\Notfound.cshtml.g.cs
+D:\ASP_NET_CORE\webdieuhanh\WebDieuHanh\obj\Debug\net5.0\Razor\Views\Notfound\Index.cshtml.g.cs
+D:\ASP_NET_CORE\webdieuhanh\WebDieuHanh\obj\Debug\net5.0\Razor\Views\Shared\_Partial_Pager.cshtml.g.cs
+D:\ASP_NET_CORE\webdieuhanh\WebDieuHanh\obj\Debug\net5.0\Razor\Views\Dieudong\GetAll.cshtml.g.cs
